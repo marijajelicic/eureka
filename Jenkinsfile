@@ -15,7 +15,7 @@ pipeline {
             }
             steps{
                 scriptt{
-                    app=docker.build(DOCKER_IMAGE_NAME)
+                    docker.build(DOCKER_IMAGE_NAME)
                 }
             }
             post {
