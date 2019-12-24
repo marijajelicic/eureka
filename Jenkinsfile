@@ -19,7 +19,7 @@ pipeline {
                     emailext (
                         subject: "Job '${env.JOB_NAME} ${env.BUILD_NUMBER} - ${params.PARAMETAR}'",
                         body: """CI/CD pipeline greska u "Docker" fazi. Log fajl se moze videti na: href=${env.BUILD_URL} """,
-                        to: "mjelicic@netcast.rs",
+                        to: "marija.jelicic@netcast.rs",
                         from: "jenkins@jenkins.netcast.rs"
                     )
                 }
