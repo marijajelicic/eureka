@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKER_IMAGE_NAME = "eureka:latest"
+    }
     stages {
         stage ('Docker') {
             when {
@@ -25,4 +26,4 @@ pipeline {
         }
     }
 }
-}
+
