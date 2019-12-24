@@ -15,7 +15,10 @@ pipeline {
             }
             steps{
                 script{
-                   def app=docker.build(DOCKER_IMAGE_NAME)
+                    sh '''
+                            docker image build -t eureka:latest .
+                        '''
+                  // def app=docker.build(DOCKER_IMAGE_NAME)
                 }
             }
             post {
