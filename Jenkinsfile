@@ -2,9 +2,6 @@ pipeline {
     agent any
     environment {
         DOCKER_IMAGE_NAME = "eureka:latest"
-    options {
-      gitLabConnection('https://github.com/marijajelicic/eureka.git')
-    }
     stages {
         stage ('Docker') {
             when {
