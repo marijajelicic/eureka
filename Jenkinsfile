@@ -4,13 +4,17 @@ pipeline {
         DOCKER_IMAGE_NAME = "eureka:latest"
     }
     stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/marijajelicic/eureka'
+            }
+        }
         stage ('Docker') {
             when {
                 branch 'master'
             }
             steps{
-                script{
-                    checkout scm
+                scriptt{
                     app=docker.build(DOCKER_IMAGE_NAME)
                 }
             }
