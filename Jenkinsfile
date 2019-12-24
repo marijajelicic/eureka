@@ -3,14 +3,6 @@ pipeline {
     environment {
         DOCKER_IMAGE_NAME = "eureka:latest"
     }
-    scm {
-        git {
-            remote {
-                github('marijajelicic/eureka')
-                refspec('+refs/pull/*:refs/remotes/origin/pr/*')
-            }
-        }
-    }
     stages {
         stage ('Docker') {
             when {
@@ -18,6 +10,7 @@ pipeline {
             }
             steps{
                 script{
+                    checkout scm
                     docker.build(DOCKER_IMAGE_NAME)
                 }
             }
