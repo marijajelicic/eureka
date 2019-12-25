@@ -39,7 +39,7 @@ pipeline {
             steps{
                 script{
                     sh '''
-                            ddocker run -d --name eureka -p 8761:8761 eureka:latest
+                            docker run -d --name eureka -p 8761:8761 eureka:latest
                         '''
                 }
             }
